@@ -1,0 +1,4 @@
+.vscode
+objs
+libs/glad.a
+.DS_Store
