@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scop.h                                             :+:      :+:    :+:   */
+/*   ft_parse_objs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/08 15:37:47 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/01/08 15:30:22 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/01/08 15:50:04 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCOP_H
-# define SCOP_H
-# define GL_SILENCE_DEPRECATION
-//include <>
-#include <stdbool.h>
-// include ""
+#ifndef FT_PARSE_OBJS_H
+#define FT_PARSE_OBJS_H
+#include "scop.h"
+t_obj ft_parse_obj();
 
-typedef struct	s_obj
-{
-	float		*vertices;
-	unsigned	*indexes;
-}				t_obj;
-
-#endif
+#endif // FT_PARSE_OBJS_H
