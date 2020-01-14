@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_objs.h                                    :+:      :+:    :+:   */
+/*   ft_loop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 15:30:22 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/08 15:50:04 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/01/11 10:09:29 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/01/14 10:45:09 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PARSE_OBJS_H
-#define FT_PARSE_OBJS_H
-#include "scop.h"
-t_obj ft_parse_obj();
+#include "../includes/scop.h"
+#include <stdio.h>
 
-#endif // FT_PARSE_OBJS_H
+void	ft_loop(void *data){
+	t_obj *obj;
+
+	obj = data;
+	printf("is it looping\n");
+	glClear(GL_COLOR_BUFFER_BIT);
+	glUseProgram(obj->shader_programm);
+	glBindVertexArray(obj->voa);
+	glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
+}

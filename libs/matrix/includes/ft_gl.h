@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_objs.c                                    :+:      :+:    :+:   */
+/*   ft_gl.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 15:17:21 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/11 15:35:30 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/01/14 14:47:44 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/01/14 15:20:44 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/scop.h"
-#include "../includes/test_globals.h"
+#include <math.h>
+#include "ft_mat.h"
 
-
-t_obj	ft_parse_obj(){
-	t_obj out;
-
-	out.vertices = g_vertices;
-	out.v_size = sizeof(g_vertices);
-	out.indices = g_indices;
-	out.i_size = sizeof(g_indices);
-	return (out);
-}
+typedef t_fm44 t_mat;
+typedef t_fm14 t_vec;
+static const t_mat g_id_mat = {
+		{1,0,0,0},
+		{0,1,0,0},
+		{0,0,1,0},
+		{0,0,0,1}
+};

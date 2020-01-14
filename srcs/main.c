@@ -6,18 +6,24 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
 
-
-void ft_load_model(){
-	ft_parse_obj();
-}
-
 int main()
 {
-	void		ft_init_glfw();
-	GLFWwindow*	ft_glfw_new_window_context();
-	if (ft_glfw_init_glad())
-		return -1;
-	ft_load_model();
+	t_obj		obj;
+	void		*win;
+
+	ft_glfw_init();
+	if ((win = ft_glfw_new_window_context())
+		&& ft_glfw_init_glad())
+	{
+		obj = ft_parse_obj();
+		ft_parse_shaders(&obj);
+		ft_load_shaders(&obj);
+		ft_load_objs(&obj);
+		ft_gl_loop(win, &ft_loop, &obj);
+	}
+	else
+		return (-1);
+	return (0);
 }
 
 

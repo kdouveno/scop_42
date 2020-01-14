@@ -6,21 +6,42 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/08 15:37:47 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/11 17:24:40 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCOP_H
 # define SCOP_H
 # define GL_SILENCE_DEPRECATION
-//include <>
 #include <stdbool.h>
-// include ""
+#include <stddef.h>
+#include "../libs/glad/includes/glad.h"
 
-typedef struct	s_obj
+typedef const char*	t_shader;
+
+typedef struct		s_obj
 {
-	float		*vertices;
-	unsigned	*indexes;
-}				t_obj;
+	unsigned		v_size;
+	unsigned		i_size;
+	unsigned		shader_programm;
+	unsigned		voa;
+	const unsigned	*indices;
+	const float		*vertices;
+	t_shader		vertex_sh;
+	t_shader		fragment_sh;
 
+}					t_obj;
+
+//	PARSER {
+	t_obj			ft_parse_obj(void);
+
+	void		ft_parse_shaders(t_obj *obj);
+//	}
+//	GL INIT {
+	int			ft_load_shaders(t_obj *obj);
+	void		ft_load_objs(t_obj *obj);
+//	}
+//	Loop renderer {
+	void	ft_loop(void *data);
+//	}
 #endif

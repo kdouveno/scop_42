@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_objs.c                                    :+:      :+:    :+:   */
+/*   ft_parse_shaders.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 15:17:21 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/11 15:35:30 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/01/11 11:02:28 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/01/11 15:35:35 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 #include "../includes/test_globals.h"
 
 
-t_obj	ft_parse_obj(){
-	t_obj out;
-
-	out.vertices = g_vertices;
-	out.v_size = sizeof(g_vertices);
-	out.indices = g_indices;
-	out.i_size = sizeof(g_indices);
-	return (out);
+void	ft_parse_shaders(t_obj *obj){
+	obj->vertex_sh = g_vertex_shader_source;
+	obj->fragment_sh = g_fragment_shader_source;
 }
