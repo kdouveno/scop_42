@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 12:06:52 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/14 15:39:45 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:17:58 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ t_mat	ft_scale_mat(float x, float y, float z)
 t_mat	ft_rotation(float x, float y, float z, float angle)
 {
 	t_fm44		out;
-	float		tab[16];
 	float		co;
 	float		so;
 	float		mco;
@@ -50,4 +49,4 @@ t_mat	ft_rotation(float x, float y, float z, float angle)
 		{0, 0, 0, 1}
 	};
 	return out;
-}
+} 

@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 13:37:10 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/14 14:13:32 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:17:22 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 t_fm44	ft_fm44_add(t_fm44 a, t_fm44 b)
 {
 	return ((t_fm44){
-		ft_fm14add(a.a, b.a),
-		ft_fm14add(a.b, b.b),
-		ft_fm14add(a.c, b.c),
-		ft_fm14add(a.d, b.d)
+		ft_fm14_add(a.a, b.a),
+		ft_fm14_add(a.b, b.b),
+		ft_fm14_add(a.c, b.c),
+		ft_fm14_add(a.d, b.d)
 	});
 }
 
@@ -26,9 +26,9 @@ t_fm44	ft_fm44_spro(t_fm44 a, float s)
 {
 	return ((t_fm44){
 		ft_fm14_spro(a.a, s),
-		ft_fm14_spro(a.a, s),
-		ft_fm14_spro(a.a, s),
-		ft_fm14_spro(a.a, s)
+		ft_fm14_spro(a.b, s),
+		ft_fm14_spro(a.c, s),
+		ft_fm14_spro(a.d, s)
 	});
 }
 
