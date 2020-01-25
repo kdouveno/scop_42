@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 14:47:44 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/14 15:20:44 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:50:55 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,7 @@ static const t_mat g_id_mat = {
 		{0,0,1,0},
 		{0,0,0,1}
 };
+
+t_mat	ft_trans_mat(float x, float y, float z);
+t_mat	ft_scale_mat(float x, float y, float z);
+t_mat	ft_rot_mat(float x, float y, float z, float angle);
