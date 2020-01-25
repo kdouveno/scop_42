@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 11:30:16 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/14 09:45:08 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:59:37 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ int ft_load_shaders(t_obj *obj){
 	glGetShaderiv(shader_program, GL_LINK_STATUS, &success);
 	if (!success)
 		return 0;
+
 	glDeleteShader(vertex_shader);
 	glDeleteShader(fragment_shader);
-	obj->shader_programm = shader_program;
+	obj->shader_program = shader_program;
 	return 1;
 }

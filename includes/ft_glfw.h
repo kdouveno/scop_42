@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 14:28:05 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/11 17:32:23 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 12:01:40 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "glfw3.h"
 // settings
 static const unsigned int SCR_WIDTH = 800;
-static const unsigned int SCR_HEIGHT = 600;
+static const unsigned int SCR_HEIGHT = 800;
 
 void		ft_glfw_init();
 GLFWwindow*	ft_glfw_new_window_context();

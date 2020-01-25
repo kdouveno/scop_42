@@ -3,3 +3,4 @@ objs
 libs/glad.a
 .DS_Store
 scop
+**/*.a

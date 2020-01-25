@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/11 17:24:40 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:57:44 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct		s_obj
 {
 	unsigned		v_size;
 	unsigned		i_size;
-	unsigned		shader_programm;
+	unsigned		shader_program;
 	unsigned		voa;
 	const unsigned	*indices;
 	const float		*vertices;
