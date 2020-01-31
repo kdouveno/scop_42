@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 10:09:29 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/21 14:46:05 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/01/31 13:17:47 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ void	ft_loop(void *data){
 	obj = data;
 	t_mat trans = g_id_mat;
 
-	tmp = ft_fm14_unit((t_vec){1.0f, 1.0f, 0.0f, 1.0f});
+	tmp = ft_fm14_unit((t_vec){0.0f, 1.0f, 0.0f, 1.0f});
+	trans = ft_fm44_pro(trans, ft_perspective(0.5f, 1.f, .1f, 20));
+	trans = ft_fm44_pro(trans, ft_trans_mat(0.0f, 0.0f, -2.0f));
 	trans = ft_fm44_pro(trans, ft_rot_mat(tmp.a, tmp.b, tmp.c, (int)time % 5000 * 2 * M_PI / 5000));
 
 	glClear(GL_COLOR_BUFFER_BIT);
 	glUseProgram(obj->shader_program);
-	transformLoc = glGetUniformLocation(obj->shader_program, "transmat");
+	transformLoc = glGetUniformLocation(obj->shader_program, "transmatcdcd");
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)&trans);
 	glBindVertexArray(obj->voa);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glDrawElements(GL_TRIANGLES, 50, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
