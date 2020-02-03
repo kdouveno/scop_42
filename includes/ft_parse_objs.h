@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scop.h                                             :+:      :+:    :+:   */
+/*   ft_parse_objs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/03 16:06:24 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/02/03 13:38:54 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/02/03 17:08:48 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCOP_H
-# define SCOP_H
-# define GL_SILENCE_DEPRECATION
-#include <stdbool.h>
-#include <stddef.h>
-#include "../libs/glad/includes/glad.h"
-#include "../libs/libmatrix/includes/ft_gl.h"
-#include "ft_obj.h"
-#include "ft_parse_objs.h"
+#ifndef FT_PARSE_OBJS_H
+# define FT_PARSE_OBJS_H
+# include "../libs/libmatrix/includes/ft_gl.h"
+# include "ft_obj.h"
+# include "../libs/liblist/includes/ft_list.h"
+# define BUF_SIZE 64
 
 
-//	GL INIT {
-	int				ft_load_shaders(t_obj *obj);                      
-	void			ft_load_objs(t_obj *obj);
-//	}
-//	Loop renderer {
-	void			ft_loop(void *data);
-//	}
+
+
+
+typedef struct			s_obj_parsing{
+	t_list				*v;
+	t_list				*vt;
+	t_list				*vn;
+	t_face_indices		*f;
+}						t_obj_parsing;
+
+t_obj					*ft_parse_objs(char *path);
+
 #endif
