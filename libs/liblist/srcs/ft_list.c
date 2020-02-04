@@ -6,19 +6,22 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 16:58:22 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/03 17:04:27 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/02/04 17:04:09 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_list.h"
 #include <stdlib.h>
 
-t_list			*ft_lst_add(t_list *begin, void *data)
+int		ft_lst_push(t_list *begin, const void *data, const size_t data_size)
 {
-	t_list		*out;
+	t_list	out;
+	t_list	*next;
 
-	if (!(out = (t_list*)malloc(sizeof(t_list))))
-		return NULL;
-	*out = (t_list){begin, data};
-	return (out);
+	if (!(out = malloc(sizeof(t_list) + data_size)))
+		return (1);
+	memcpy(out, data, data_size);
+	next = (t_list*)out + data_size;
+	*next = *begin;
+	*begin = out;
 }
