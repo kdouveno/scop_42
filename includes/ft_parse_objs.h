@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 13:38:54 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/03 17:08:48 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/02/04 13:48:39 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@
 
 
 
+typedef struct			s_veclist
+{
+	struct s_veclist	*next;
+	t_vec				vec;
+}						t_veclist;
 
-
-typedef struct			s_obj_parsing{
-	t_list				*v;
-	t_list				*vt;
-	t_list				*vn;
+typedef struct			s_obj_parsing
+{
+	t_veclist			*v;
+	t_veclist			*vt;
+	t_veclist			*vn;
 	t_face_indices		*f;
 }						t_obj_parsing;
 
