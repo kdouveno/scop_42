@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   lst_elem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 16:50:29 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/04 16:50:21 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/02/06 12:42:26 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/02/06 14:22:33 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include "../includes/lst.h"
 
-typedef void *t_list;
-
-int		ft_lst_add(t_list begin, const void *data, const size_t data_size);
-
-#endif
+void		*lst_elem(t_list ptr)
+{
+	return ptr + sizeof(t_list);
+}
