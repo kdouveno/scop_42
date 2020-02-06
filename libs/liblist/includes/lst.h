@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_objs.h                                    :+:      :+:    :+:   */
+/*   lst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 13:38:54 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/06 14:24:58 by kdouveno         ###   ########.fr       */
+/*   Created: 2020/02/03 16:50:29 by kdouveno          #+#    #+#             */
+/*   Updated: 2020/02/06 14:06:13 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PARSE_OBJS_H
-# define FT_PARSE_OBJS_H
-# include "../libs/libmatrix/includes/ft_gl.h"
-# include "ft_obj.h"
-# include "../libs/liblist/includes/lst.h"
-# define BUF_SIZE 64
+#ifndef FT_LIST_H
+# define FT_LIST_H
+# include <stdlib.h>
+# define LSTP(data) &data, sizeof(data)
 
+typedef void* t_list;
 
+int		lst_push(t_list *begin, const void *data, const size_t data_size);
+int		lst_set(t_list ptr, const void *data, const size_t data_size);
+int		lst_apnd(t_list *ptr, const void *data, const size_t data_size);
 
-typedef struct			s_obj_parsing
-{
-	t_list				v;
-	t_list				vt;
-	t_list				vn;
-	t_face_indices		*f;
-}						t_obj_parsing;
-
-t_obj					*ft_parse_objs(char *path);
+void	*lst_elem(t_list ptr);
 
 #endif
