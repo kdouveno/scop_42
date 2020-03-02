@@ -18,7 +18,6 @@
 #include "../libs/glad/includes/glad.h"
 #include "../libs/libmatrix/includes/ft_gl.h"
 #include "ft_obj.h"
-#include "ft_parse_objs.h"
 
 
 //	GL INIT {

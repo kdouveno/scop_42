@@ -14,7 +14,9 @@
 # define FT_EXITS_H
 # define OPEN_FILE_ERROR "An error occured while opening file."
 # define DYNAMIC_ALLOCATION_ERROR "An error occured while allocating memory (malloc returned null pointer)."
-
+# define OBJ_FILE_ERROR "An error occured while interpreting an .obj file."
+# include <stdlib.h>
+# include <stdio.h>
 void			usage();
 void			error(char *msg);
 #endif
