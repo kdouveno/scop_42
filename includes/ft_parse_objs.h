@@ -14,7 +14,7 @@
 # define FT_PARSE_OBJS_H
 # include "../libs/libmatrix/includes/ft_gl.h"
 # include "ft_obj.h"
-# include "../libs/liblist/includes/lst.h"
+# include "../libs/liblst/includes/lst.h"
 # define BUF_SIZE 64
 
 

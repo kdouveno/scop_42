@@ -19,27 +19,27 @@
 typedef const char*	t_shader;
 
 typedef struct		s_face_indices{
-	unsigned int	v1;
-	unsigned int	vn1;
-	unsigned int	vt1;
-	unsigned int	v2;
-	unsigned int	vn2;
-	unsigned int	vt2;
-	unsigned int	v3;
-	unsigned int	vn3;
-	unsigned int	vt3;
+	int	v1;
+	int	vn1;
+	int	vt1;
+	int	v2;
+	int	vn2;
+	int	vt2;
+	int	v3;
+	int	vn3;
+	int	vt3;
 }					t_face_indices;
 
 typedef struct		s_face{
 	float			v1;
-	float			vn1;
 	float			vt1;
+	float			vn1;
 	float			v2;
-	float			vn2;
 	float			vt2;
+	float			vn2;
 	float			v3;
-	float			vn3;
 	float			vt3;
+	float			vn3;
 }					t_face;
 
 typedef struct		s_obj
