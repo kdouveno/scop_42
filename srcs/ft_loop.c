@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 10:09:29 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/01/31 13:17:47 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/02 12:50:23 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	ft_loop(void *data){
 	glUseProgram(obj->shader_program);
 	transformLoc = glGetUniformLocation(obj->shader_program, "transmatcdcd");
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)&trans);
-	glBindVertexArray(obj->voa);
 	glDrawElements(GL_TRIANGLES, 50, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
