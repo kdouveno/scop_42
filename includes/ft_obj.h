@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 15:20:01 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/02/03 16:46:06 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/03 12:38:16 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ typedef const char*	t_shader;
 
 typedef struct		s_face_indices{
 	int	v1;
-	int	vn1;
 	int	vt1;
+	int	vn1;
 	int	v2;
-	int	vn2;
 	int	vt2;
+	int	vn2;
 	int	v3;
-	int	vn3;
 	int	vt3;
+	int	vn3;
 }					t_face_indices;
 
 typedef struct		s_face{

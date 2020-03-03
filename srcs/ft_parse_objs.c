@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:17:21 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/02 17:11:37 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/03 15:15:13 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ static inline void	ft_parse_vertex(char *cmd, t_obj_parsing *obj)
 	tmp = strtok(NULL, " ");
 	vertex.d = tmp ? atof(tmp) : 1.0f;
 	if (!cmd[1])
-		lst_push(obj->v, LSTP(vertex));
+		lst_push(&obj->v, LSTP(vertex));
 	else if (cmd[1] == 't' && !cmd[2])
-		lst_push(obj->vt, LSTP(vertex));
+		lst_push(&obj->vt, LSTP(vertex));
 	else if (cmd[1] == 'n' && !cmd[2])
-		lst_push(obj->vn, LSTP(vertex));
+		lst_push(&obj->vn, LSTP(vertex));
 	else
 		error(OBJ_FILE_ERROR);
 }
@@ -46,69 +46,37 @@ static inline void	ft_parse_index(t_obj_parsing *obj)
 	int				i;
 
 	i = 0;
+	bzero(faces, sizeof(faces));
 	while (i < 9)
 	{
 		tmp = strtok(NULL, " ");
+		if (!tmp)
+			break ;
 		faces[i++] = atoi(tmp);
-		while (*tmp && *tmp != '/')
+		while (*tmp && tmp[-1] != '/')
 			tmp++;
-		faces[i++] == *tmp ? atoi(tmp++ + 1) : 0;
-		while (*tmp && *tmp != '/')
+		faces[i++] = atoi(tmp++);
+		while (*tmp && tmp[-1] != '/')
 			tmp++;
-		faces[i++] == *tmp ? atoi(tmp++ + 1) : 0;
+		faces[i++] = atoi(tmp++);
 	}
 
-	lst_push(obj->f, LSTP(faces));
+	lst_push(&obj->f, LSTP(faces));
 }
 
 static inline void	ft_parse_line(char *buf, t_obj_parsing *obj)
 {
 	char	*tmp;
 
-	if ((tmp = strtok(buf, " ")))
+	tmp = strtok(buf, " ");
+	if (tmp)
 	{
-
 		if (tmp[0] == 'v')
 			ft_parse_vertex(tmp, obj);
 		else if (tmp[0] == 'f')
 			ft_parse_index(obj);
+		tmp = strtok(NULL, " ");
 	}
-}
-
-void				each_print_vector(void *ptr, size_t index){
-	t_vec	*vec;
-
-	(void)index;
-	vec = (t_vec*)ptr;
-	printf("%f %f %f %f\n", vec->a, vec->b, vec->c, vec->d);
-}
-void				each_print_indices(void *ptr, size_t index){
-	t_face_indices	*indices;
-
-	(void)index;
-	indices = (t_face_indices*)ptr;
-	printf("f %d/%d/%d %d/%d/%d %d/%d/%d\n",
-			indices->v1,
-			indices->vt1,
-			indices->vn1,
-			indices->v2,
-			indices->vt2,
-			indices->vn2,
-			indices->v3,
-			indices->vt3,
-			indices->vn3
-	);
-}
-
-void				test__print_parse_obj(t_obj_parsing *obj)
-{
-	printf("v ");
-	lst_each(obj->v, &each_print_vector);
-	printf("vt ");
-	lst_each(obj->vt, &each_print_vector);
-	printf("vn ");
-	lst_each(obj->vn, &each_print_vector);
-	lst_each(obj->f, &each_print_indices);
 }
 
 void				ft_parse_objs(char *path) // debug version of t_obj *ft_parse_objs: return type to restablish.
@@ -129,6 +97,10 @@ void				ft_parse_objs(char *path) // debug version of t_obj *ft_parse_objs: retu
 		free(buf);
 		buf = NULL;
 	}
-	test__print_parse_obj(&out);
+	lst_rev(&out.f);
+	lst_rev(&out.v);
+	lst_rev(&out.vt);
+	lst_rev(&out.vn);
+	compute_obj();
 	// return (out);
 }
