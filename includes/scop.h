@@ -6,14 +6,14 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/03 16:37:15 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/04 13:00:51 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCOP_H
 # define SCOP_H
 # define GL_SILENCE_DEPRECATION
-# define BZ(var) (bzero(&var, sizeof(var)))
+# define BZERO(var) (bzero(&var, sizeof(var)))
 #include <stdbool.h>
 #include <stddef.h>
 #include "../libs/glad/includes/glad.h"
