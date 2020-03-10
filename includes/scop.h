@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 08:21:47 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/04 13:00:51 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/10 16:49:33 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCOP_H
 # define GL_SILENCE_DEPRECATION
 # define BZERO(var) (bzero(&var, sizeof(var)))
+# define SOF sizeof(float)
 #include <stdbool.h>
 #include <stddef.h>
 #include "../libs/glad/includes/glad.h"

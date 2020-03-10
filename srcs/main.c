@@ -11,8 +11,9 @@ void processInput(GLFWwindow *window);
 
 int main(int argc, char **argv)
 {
-	// t_obj		*obj;
+	t_obj		obj;
 	void		*win;
+
 
 	if (argc != 2)
 		usage();
@@ -20,11 +21,11 @@ int main(int argc, char **argv)
 	if ((win = ft_glfw_new_window_context())
 		&& ft_glfw_init_glad())
 	{
-		ft_parse_objs(argv[1]);
-		// ft_parse_shaders(&obj);
-		// ft_load_shaders(&obj);
-		// ft_load_objs(&obj);
-		// ft_gl_loop(win, &ft_loop, &obj);
+		obj = ft_parse_objs(argv[1]);
+		ft_parse_shaders(&obj);
+		ft_load_shaders(&obj);
+		ft_load_objs(&obj);
+		ft_gl_loop(win, &ft_loop, &obj);
 	}
 	else
 		return (-1);

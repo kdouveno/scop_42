@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 13:38:54 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/04 14:46:43 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/10 16:42:39 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef struct			s_obj_parsing
 	t_list				f;
 }						t_obj_parsing;
 
-void					ft_parse_objs(char *path);
+t_obj					ft_parse_objs(char *path);
+
+t_obj					ft_compute_obj(t_obj_parsing *obj);
 
 #endif

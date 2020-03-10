@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 15:20:01 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/04 14:38:06 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/03/10 16:19:51 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct		s_vertex{
 	float			vx;
 	float			vy;
 	float			vz;
-	float			vm;
 	float			vtx;
 	float			vty;
 	float			vnx;
@@ -42,7 +41,7 @@ typedef struct		s_vertex{
 	float			vnz;
 }					t_vertex;
 
-typedef struct 		face
+typedef struct 		s_face
 {
 	t_vertex		f1;
 	t_vertex		f2;
@@ -50,7 +49,7 @@ typedef struct 		face
 }					t_face;
 typedef struct		s_obj
 {
-	unsigned		faces_size;
+	size_t			faces_size;
 	t_face			*faces_vbo;
 	unsigned		shader_program;
 	const unsigned	*indices;
