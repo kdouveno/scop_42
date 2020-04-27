@@ -1,1 +1,4 @@
 
+[submodule "libs/libslst"]
+	path = libs/libslst
+	url = https://github.com/kdouveno/scop_42.git
