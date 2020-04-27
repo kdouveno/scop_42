@@ -1,1 +1,4 @@
 
+[submodule "libs/liblst"]
+	path = libs/liblst
+	url = https://github.com/kdouveno/liblst.git
