@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_obj.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 15:20:01 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/10 16:19:51 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/05/05 19:10:52 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct 		s_face
 	t_vertex		f2;
 	t_vertex		f3;
 }					t_face;
+
 typedef struct		s_obj
 {
 	size_t			faces_size;

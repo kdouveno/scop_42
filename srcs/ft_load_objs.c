@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_load_objs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 10:23:02 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/02 12:50:05 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/05/02 20:57:53 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_load_objs(t_obj *obj){ // gros caca a changer
 	glBindVertexArray(voa);
 	
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, obj->faces_size, obj->vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, obj->faces_size, obj->faces_vbo, GL_STATIC_DRAW);
 
 	
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);

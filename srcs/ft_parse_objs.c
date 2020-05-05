@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_objs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:17:21 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/10 16:42:36 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/05/04 18:50:31 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,12 @@ t_obj				ft_parse_objs(char *path) // debug version of t_obj *ft_parse_objs: ret
 		free(buf);
 		buf = NULL;
 	}
+
 	lst_rev(&obj.f);
 	lst_rev(&obj.v);
 	lst_rev(&obj.vt);
 	lst_rev(&obj.vn);
 	out = ft_compute_obj(&obj);
 	test__print_parsed_obj_vbo(&out);
-	// return (out);
+	return (out);
 }

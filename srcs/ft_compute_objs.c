@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_compute_objs.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 15:10:17 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/10 17:01:23 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/05/05 19:16:09 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ t_obj				ft_compute_obj(t_obj_parsing *obj)
 	out.faces_size = lst_size(obj->f);
 	if (!(out.faces_vbo = (t_face*)malloc(sizeof(t_face) * out.faces_size)))
 		error(DYNAMIC_ALLOCATION_ERROR);
-
 	obj->tv = lst_totab(obj->v, sizeof(t_vec));
 	obj->tvt = lst_totab(obj->vt, sizeof(t_vec));
 	obj->tvn = lst_totab(obj->vn, sizeof(t_vec));
