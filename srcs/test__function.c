@@ -38,42 +38,42 @@ void				test__print_parse_obj(t_obj_parsing *obj)
 	lst_each_i(obj->f, &each_print_indices);
 }
 
-void				test__print_parsed_obj_vbo(t_obj *t_obj)
+void				test__print_parsed_obj_vbo(t_obj *obj)
 {
 	size_t i;
 
 	i = 0;
-	while (i < t_obj->faces_size)
+	while (i < obj->faces_size)
 	{
 		printf("f%lu\n"
 		"\t%8.6f %8.6f %8.6f | %8.6f %8.6f | %8.6f %8.6f %8.6f\n"
 		"\t%8.6f %8.6f %8.6f | %8.6f %8.6f | %8.6f %8.6f %8.6f\n"
 		"\t%8.6f %8.6f %8.6f | %8.6f %8.6f | %8.6f %8.6f %8.6f\n",
 			i,
-			t_obj->faces_vbo[i].f1.vx,
-			t_obj->faces_vbo[i].f1.vy,
-			t_obj->faces_vbo[i].f1.vz,
-			t_obj->faces_vbo[i].f1.vtx,
-			t_obj->faces_vbo[i].f1.vty,
-			t_obj->faces_vbo[i].f1.vnx,
-			t_obj->faces_vbo[i].f1.vny,
-			t_obj->faces_vbo[i].f1.vnz,
-			t_obj->faces_vbo[i].f2.vx,
-			t_obj->faces_vbo[i].f2.vy,
-			t_obj->faces_vbo[i].f2.vz,
-			t_obj->faces_vbo[i].f2.vtx,
-			t_obj->faces_vbo[i].f2.vty,
-			t_obj->faces_vbo[i].f2.vnx,
-			t_obj->faces_vbo[i].f2.vny,
-			t_obj->faces_vbo[i].f2.vnz,
-			t_obj->faces_vbo[i].f3.vx,
-			t_obj->faces_vbo[i].f3.vy,
-			t_obj->faces_vbo[i].f3.vz,
-			t_obj->faces_vbo[i].f3.vtx,
-			t_obj->faces_vbo[i].f3.vty,
-			t_obj->faces_vbo[i].f3.vnx,
-			t_obj->faces_vbo[i].f3.vny,
-			t_obj->faces_vbo[i].f3.vnz
+			obj->faces_vbo[i].f1.vx,
+			obj->faces_vbo[i].f1.vy,
+			obj->faces_vbo[i].f1.vz,
+			obj->faces_vbo[i].f1.vtx,
+			obj->faces_vbo[i].f1.vty,
+			obj->faces_vbo[i].f1.vnx,
+			obj->faces_vbo[i].f1.vny,
+			obj->faces_vbo[i].f1.vnz,
+			obj->faces_vbo[i].f2.vx,
+			obj->faces_vbo[i].f2.vy,
+			obj->faces_vbo[i].f2.vz,
+			obj->faces_vbo[i].f2.vtx,
+			obj->faces_vbo[i].f2.vty,
+			obj->faces_vbo[i].f2.vnx,
+			obj->faces_vbo[i].f2.vny,
+			obj->faces_vbo[i].f2.vnz,
+			obj->faces_vbo[i].f3.vx,
+			obj->faces_vbo[i].f3.vy,
+			obj->faces_vbo[i].f3.vz,
+			obj->faces_vbo[i].f3.vtx,
+			obj->faces_vbo[i].f3.vty,
+			obj->faces_vbo[i].f3.vnx,
+			obj->faces_vbo[i].f3.vny,
+			obj->faces_vbo[i].f3.vnz
 		);
 		i++;
 	}

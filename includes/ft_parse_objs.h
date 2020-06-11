@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_objs.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 13:38:54 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/10 16:42:39 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/04/27 16:49:47 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

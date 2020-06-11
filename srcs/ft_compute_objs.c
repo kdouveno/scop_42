@@ -6,7 +6,7 @@
 /*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 15:10:17 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/05/05 19:16:09 by karldouveno      ###   ########.fr       */
+/*   Updated: 2020/06/11 13:15:59 by karldouveno      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void				each_compute_face(void *face, void *data, size_t i)
 	obj = data;
 	fi = face;
 	cur = obj->obj->faces_vbo + i;
-	memcpy(cur, (t_vec*)obj->tv.tab + fi->v1 - 1, SOF * 3);
-	memcpy((float*)cur + 4, (t_vec*)obj->tvt.tab + fi->vt1 - 1, SOF * 2);
-	memcpy((float*)cur + 6, (t_vec*)obj->tvn.tab + fi->vn1 - 1, SOF * 3);
+	memcpy(cur, (t_vec*)obj->tv.tab + fi->v1, SOF * 3);
+	memcpy((float*)cur + 3, (t_vec*)obj->tvt.tab + fi->vt1, SOF * 2);
+	memcpy((float*)cur + 5, (t_vec*)obj->tvn.tab + fi->vn1, SOF * 3);
 
-	memcpy((float*)cur + 9, (t_vec*)obj->tv.tab + fi->v2 - 1, SOF * 3);
-	memcpy((float*)cur + 13, (t_vec*)obj->tvt.tab + fi->vt2 - 1, SOF * 2);
-	memcpy((float*)cur + 15, (t_vec*)obj->tvn.tab + fi->vn2 - 1, SOF * 3);
+	memcpy((float*)cur + 8, (t_vec*)obj->tv.tab + fi->v2, SOF * 3);
+	memcpy((float*)cur + 11, (t_vec*)obj->tvt.tab + fi->vt2, SOF * 2);
+	memcpy((float*)cur + 13, (t_vec*)obj->tvn.tab + fi->vn2, SOF * 3);
 	
-	memcpy((float*)cur + 18, (t_vec*)obj->tv.tab + fi->v2 - 1, SOF * 3);
-	memcpy((float*)cur + 22, (t_vec*)obj->tvt.tab + fi->vt3 - 1, SOF * 2);
-	memcpy((float*)cur + 25, (t_vec*)obj->tvn.tab + fi->vn3 - 1, SOF * 3);
+	memcpy((float*)cur + 16, (t_vec*)obj->tv.tab + fi->v3, SOF * 3);
+	memcpy((float*)cur + 19, (t_vec*)obj->tvt.tab + fi->vt3, SOF * 2);
+	memcpy((float*)cur + 21, (t_vec*)obj->tvn.tab + fi->vn3, SOF * 3);
 }
 
 t_obj				ft_compute_obj(t_obj_parsing *obj)
