@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_obj.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
+/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 15:20:01 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/05/05 19:10:52 by karldouveno      ###   ########.fr       */
+/*   Updated: 2020/08/07 15:42:14 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct		s_obj
 	size_t			faces_size;
 	t_face			*faces_vbo;
 	unsigned		shader_program;
+	unsigned		vao;
 	const unsigned	*indices;
 	const float		*vertices;
 	t_mat			obj_mat;

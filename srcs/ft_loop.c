@@ -6,7 +6,7 @@
 /*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 10:09:29 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/03/02 12:50:23 by kdouveno         ###   ########.fr       */
+/*   Updated: 2020/08/07 16:50:49 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ void	ft_loop(void *data){
 	trans = ft_fm44_pro(trans, ft_perspective(0.5f, 1.f, .1f, 20));
 	trans = ft_fm44_pro(trans, ft_trans_mat(0.0f, 0.0f, -2.0f));
 	trans = ft_fm44_pro(trans, ft_rot_mat(tmp.a, tmp.b, tmp.c, (int)time % 5000 * 2 * M_PI / 5000));
+	trans = ft_fm44_pro(trans, ft_scale_mat(.2,.2,.2));
 
 	glClear(GL_COLOR_BUFFER_BIT);
 	glUseProgram(obj->shader_program);
-	transformLoc = glGetUniformLocation(obj->shader_program, "transmatcdcd");
+	transformLoc = glGetUniformLocation(obj->shader_program, "transmat");
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, (float*)&trans);
-	glDrawElements(GL_TRIANGLES, 50, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(obj->vao);
+	glDrawArrays(GL_TRIANGLES, 0, obj->faces_size * 3);
 	glBindVertexArray(0);
 }

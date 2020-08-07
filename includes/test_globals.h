@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_globals.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: karldouvenot <karldouvenot@student.42.f    +#+  +:+       +#+        */
+/*   By: kdouveno <kdouveno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 14:20:17 by kdouveno          #+#    #+#             */
-/*   Updated: 2020/06/11 13:56:31 by karldouveno      ###   ########.fr       */
+/*   Updated: 2020/08/07 16:48:09 by kdouveno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,13 @@ static const char *g_vertex_shader_source = "#version 330 core\n"
 	"uniform mat4 transmat;\n"
     "void main()\n"
     "{\n"
-    "   gl_Position = vec4(aPos, 1.0);\n"
+    "   gl_Position = transmat * vec4(aPos, 1.0);\n"
     "}\0";
 static const char *g_fragment_shader_source = "#version 330 core\n"
     "out vec4 FragColor;\n"
     "void main()\n"
     "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+    "   FragColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
     "}\n\0";
 
 #endif // TEST_GLOBALS
